@@ -1,0 +1,19 @@
+﻿<?xml version="1.0"?>
+<package >
+    <metadata>
+        <id>DevPrompt.JsonTools.Plugin</id>
+        <title>JSON Tools</title>
+        <version>1.0.0</version>
+        <authors>Junyuan Zheng</authors>
+        <owners>Junyuan Zheng</owners>
+        <projectUrl>https://github.com/spadapet/DevPrompt.JsonTools.Plugin</projectUrl>
+        <license type="expression">Apache-2.0</license>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>JSON tools for DevPrompt</description>
+        <copyright>Copyright 2019</copyright>
+        <tags>DevPrompt DevPrompt.Plugin</tags>
+    </metadata>
+    <files>
+        <file src="JsonTools.Plugin\bin\Release\**" target="tools\net40" />
+    </files>
+</package>
