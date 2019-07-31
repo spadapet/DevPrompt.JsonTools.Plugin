@@ -1,21 +1,21 @@
 ﻿using DevPrompt.Api;
-using JSONTools.UI;
+using JsonTools.Plugin.UI;
 using System;
 using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Threading;
 
-namespace JSONTools
+namespace JsonTools.Plugin
 {
     [Guid("ab69a7a5-d5da-43a0-82b0-06132ba57453")]
-    internal sealed class JSONToolsTab : PropertyNotifier, ITab, IDisposable
+    internal sealed class JsonToolsTab : PropertyNotifier, ITab, IDisposable
     {
         public IWindow Window { get; }
         public IWorkspace Workspace { get; }
         private UIElement viewElement;
 
-        public JSONToolsTab(IWindow window, IWorkspace workspace)
+        public JsonToolsTab(IWindow window, IWorkspace workspace)
         {
             this.Window = window;
             this.Workspace = workspace;

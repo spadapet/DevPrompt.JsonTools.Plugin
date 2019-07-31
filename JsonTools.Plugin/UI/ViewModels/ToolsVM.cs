@@ -2,10 +2,8 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
-using System.Windows;
-using System.Windows.Input;
 
-namespace JSONTools.UI.ViewModels
+namespace JsonTools.Plugin.UI.ViewModels
 {
     internal class ToolsVM : PropertyNotifier
     {

@@ -1,16 +1,15 @@
-﻿using JSONTools.UI.ViewModels;
-using System;
+﻿using JsonTools.Plugin.UI.ViewModels;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace JSONTools.UI
+namespace JsonTools.Plugin.UI
 {
-    internal partial class Tools: UserControl
+    internal partial class Tools : UserControl
     {
-        public JSONToolsTab Tab { get; }
+        public JsonToolsTab Tab { get; }
         public ToolsVM ViewModel { get; }
 
-        public Tools(JSONToolsTab tab)
+        public Tools(JsonToolsTab tab)
         {
             this.Tab = tab;
             this.ViewModel = new ToolsVM();

@@ -4,7 +4,7 @@ using System.Composition;
 using System.Linq;
 using System.Windows.Controls;
 
-namespace JSONTools
+namespace JsonTools.Plugin
 {
     /// <summary>
     /// Adds custom menu items to the main window
@@ -33,14 +33,14 @@ namespace JSONTools
             {
                 window.ActiveWorkspace = workspaceVM;
 
-                if (workspace.Tabs.FirstOrDefault(t => t.Id == typeof(JSONToolsTab).GUID) is ITabVM tabVM)
+                if (workspace.Tabs.FirstOrDefault(t => t.Id == typeof(JsonToolsTab).GUID) is ITabVM tabVM)
                 {
                     // The tab was already open, make sure it's shown
                     workspace.ActiveTab = tabVM;
                 }
                 else
                 {
-                    ITab tab = new JSONToolsTab(window, workspace);
+                    ITab tab = new JsonToolsTab(window, workspace);
                     workspace.AddTab(new TabVM(window, workspace, tab), activate: true);
                 }
             }
