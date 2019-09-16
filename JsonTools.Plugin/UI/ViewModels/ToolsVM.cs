@@ -1,7 +1,6 @@
-﻿using DevPrompt.Api;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System;
+﻿using System;
+using DevPrompt.Api;
+using Efficient.Json;
 
 namespace JsonTools.Plugin.UI.ViewModels
 {
@@ -12,22 +11,26 @@ namespace JsonTools.Plugin.UI.ViewModels
 
         public string Input
         {
-            set
-            {
-                this.SetPropertyValue(ref this.input, value);
-            }
+            get => this.input;
+            set => this.SetPropertyValue(ref this.input, value);
+        }
+
+        public string Output
+        {
+            get => this.output ?? string.Empty;
+            private set => this.SetPropertyValue(ref this.output, value);
         }
 
         public void OnValidate()
         {
             try
             {
-                object obj = JToken.Parse(this.input);
+                JsonValue.StringToString(this.input, formatted: false);
                 this.Output = "Valid";
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                this.Output = "Error";
+                this.Output = ex.Message;
             }
         }
 
@@ -35,12 +38,11 @@ namespace JsonTools.Plugin.UI.ViewModels
         {
             try
             {
-                dynamic parsedJson = JsonConvert.DeserializeObject(this.input);
-                this.Output = JsonConvert.SerializeObject(parsedJson, Formatting.Indented);
+                this.Output = JsonValue.StringToString(this.input, formatted: true);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                this.Output = "Error";
+                this.Output = ex.Message;
             }
         }
 
@@ -48,22 +50,11 @@ namespace JsonTools.Plugin.UI.ViewModels
         {
             try
             {
-                dynamic parsedJson = JsonConvert.DeserializeObject(this.input);
-                this.Output = JsonConvert.SerializeObject(parsedJson);
+                this.Output = JsonValue.StringToString(this.input, formatted: false);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                this.Output = "Error";
-            }
-        }
-
-        public string Output
-        {
-            get => this.output ?? string.Empty;
-
-            private set
-            {
-                this.SetPropertyValue(ref this.output, value);
+                this.Output = ex.Message;
             }
         }
     }
