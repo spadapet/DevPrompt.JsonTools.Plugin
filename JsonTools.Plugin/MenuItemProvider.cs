@@ -20,28 +20,28 @@ namespace JsonTools.Plugin
                     yield return new MenuItem()
                     {
                         Header = Resources.JSONToolsDashboardMenuName,
-                        Command = new DelegateCommand(() => this.onJSONToolsDashboard(window)),
+                        Command = new DelegateCommand(() => this.ShowJsonTools(window)),
                     };
                     break;
             }
         }
 
-        private void onJSONToolsDashboard(IWindow window)
+        private void ShowJsonTools(IWindow window)
         {
             // Adds a new tab or activates and existing tab in the default process workspace
-            if (window.FindWorkspace(Constants.ProcessWorkspaceId) is IWorkspaceVM workspaceVM && workspaceVM.Workspace is ITabWorkspace workspace)
+            if (window.FindWorkspace(Constants.ProcessWorkspaceId) is IWorkspaceHolder workspaceHolder && workspaceHolder.Workspace is ITabWorkspace workspace)
             {
-                window.ActiveWorkspace = workspaceVM;
+                window.ActiveWorkspace = workspaceHolder;
 
-                if (workspace.Tabs.FirstOrDefault(t => t.Id == typeof(JsonToolsTab).GUID) is ITabVM tabVM)
+                if (workspace.Tabs.FirstOrDefault(t => t.Id == typeof(JsonToolsTab).GUID) is ITabHolder tabHolder)
                 {
                     // The tab was already open, make sure it's shown
-                    workspace.ActiveTab = tabVM;
+                    workspace.ActiveTab = tabHolder;
                 }
                 else
                 {
                     ITab tab = new JsonToolsTab(window, workspace);
-                    workspace.AddTab(new TabVM(window, workspace, tab), activate: true);
+                    workspace.AddTab(tab, activate: true);
                 }
             }
         }

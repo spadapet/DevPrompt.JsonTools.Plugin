@@ -1,6 +1,5 @@
-﻿using System;
-using DevPrompt.Api;
-using Efficient.Json;
+﻿using Efficient.Json;
+using System;
 
 namespace JsonTools.Plugin.UI.ViewModels
 {

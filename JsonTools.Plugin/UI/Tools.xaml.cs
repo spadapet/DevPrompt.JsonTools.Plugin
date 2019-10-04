@@ -16,17 +16,17 @@ namespace JsonTools.Plugin.UI
             this.InitializeComponent();
         }
 
-        private void OnValidate(object sender, RoutedEventArgs e)
+        private void OnValidate(object sender, RoutedEventArgs args)
         {
             this.ViewModel.OnValidate();
         }
 
-        private void OnPrettify(object sender, RoutedEventArgs e)
+        private void OnPrettify(object sender, RoutedEventArgs args)
         {
             this.ViewModel.OnPrettify();
         }
 
-        private void OnStringify(object sender, RoutedEventArgs e)
+        private void OnStringify(object sender, RoutedEventArgs args)
         {
             this.ViewModel.OnStringify();
         }
