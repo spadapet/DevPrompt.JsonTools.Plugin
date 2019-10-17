@@ -1,11 +1,11 @@
-﻿using DevPrompt.Api;
-using JsonTools.Plugin.UI;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Threading;
+using DevPrompt.Api;
+using JsonTools.Plugin.UI;
 
 namespace JsonTools.Plugin
 {
@@ -77,6 +77,18 @@ namespace JsonTools.Plugin
         bool ITab.OnClosing()
         {
             return true;
+        }
+
+        void ITab.OnSetTabName()
+        {
+        }
+
+        void ITab.OnClone()
+        {
+        }
+
+        void ITab.OnDetach()
+        {
         }
     }
 }
