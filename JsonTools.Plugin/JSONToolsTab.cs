@@ -14,7 +14,7 @@ namespace JsonTools.Plugin
     {
         private UIElement viewElement;
 
-        public JsonToolsTab(IWindow window, IWorkspace workspace)
+        public JsonToolsTab()
         {
         }
 

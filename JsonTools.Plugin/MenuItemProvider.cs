@@ -44,7 +44,7 @@ namespace JsonTools.Plugin
                 }
                 else
                 {
-                    ITab tab = new JsonToolsTab(window, workspace);
+                    ITab tab = new JsonToolsTab();
                     workspace.AddTab(tab, activate: true);
                 }
             }

@@ -10,6 +10,6 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyProduct("JsonTools.Plugin")]
 [assembly: AssemblyTitle("JsonTools.Plugin")]
 [assembly: AssemblyTrademark("")]
-[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyVersion("1.5.0.0")]
 [assembly: ComVisible(false)]
 [assembly: NeutralResourcesLanguage("en", UltimateResourceFallbackLocation.MainAssembly)]
