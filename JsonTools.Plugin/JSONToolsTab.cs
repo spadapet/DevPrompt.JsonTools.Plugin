@@ -1,11 +1,12 @@
-﻿using System;
+﻿using DevPrompt.Api;
+using DevPrompt.Api.Utility;
+using JsonTools.Plugin.UI;
+using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Threading;
-using DevPrompt.Api;
-using JsonTools.Plugin.UI;
 
 namespace JsonTools.Plugin
 {
